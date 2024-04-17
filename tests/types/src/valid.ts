@@ -2922,6 +2922,22 @@ stripe
     }
   });
 
+// confirmPayment redirect: 'if_required' with clientSecret and existing confirmation token
+stripe
+  .confirmPayment({
+    clientSecret: '',
+    redirect: 'if_required',
+    confirmParams: {
+      confirmation_token: '',
+    },
+  })
+  .then((res) => {
+    if (res.error) {
+    }
+    if (res.paymentIntent) {
+    }
+  });
+
 // confirmSetup: redirect: 'always' without clientSecret
 stripe
   .confirmSetup({
